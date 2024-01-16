@@ -16,13 +16,16 @@ df = read_data(file_path)
 
 # User-defined function for data preprocessing
 def preprocess_data(df):
-    # Transpose the dataframe
-    df_transposed = df.transpose()
-
     # Clean the data (handle missing values, etc.)
-    df_cleaned = df_transposed.dropna()
+    df_cleaned = df.dropna()
+    
+    # Transpose the dataframe
+    df_transposed = df_cleaned.transpose()
 
-    return df_cleaned
+    return df_transposed
+
+df_transposed = preprocess_data(df)
+df_transposed
 
 # User-defined function for clustering
 def perform_clustering(df, num_clusters=3):
