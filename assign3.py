@@ -52,12 +52,7 @@ def fit_curve(x, y, model_func):
     return popt
 
 # User-defined function to plot data, cluster centers, and fit
-def plot_data_cluster_fit(df, cluster_labels, cluster_centers, x, y, model_func, prediction_years=10):
-    # Plot data points with cluster labels
-    plt.scatter(x, y, c=cluster_labels, cmap='viridis', label='Data Points')
-
-    # Plot cluster centers
-    plt.scatter(cluster_centers[:, 0], cluster_centers[:, 1], marker='X', s=200, c='red', label='Cluster Centers')
+def plot_data_fit( x, y, model_func, prediction_years=10):
 
     # Fit a curve to the data
     popt = fit_curve(x, y, model_func)
